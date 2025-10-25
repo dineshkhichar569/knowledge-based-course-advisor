@@ -8,10 +8,12 @@ app = FastAPI(title="Backlog-Based Course Advisor")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "https://knowledge-based-course-advisor.vercel.app",
-    "http://localhost:5173"
-]
-, allow_credentials=True, allow_methods=["*"], allow_headers=["*"]
+        "https://knowledge-based-course-advisor-94zlxylnf.vercel.app",
+        "http://localhost:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 def build_reverse_graph() -> Dict[str, List[str]]:

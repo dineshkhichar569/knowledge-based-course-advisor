@@ -7,7 +7,11 @@ from .rules import PREREQ_GRAPH, DISPLAY_NAME, SECTION_BY_TIER, all_courses, sec
 app = FastAPI(title="Backlog-Based Course Advisor")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"]
+    allow_origins=[
+    "https://knowledge-based-course-advisor.vercel.app",
+    "http://localhost:5173"
+]
+, allow_credentials=True, allow_methods=["*"], allow_headers=["*"]
 )
 
 def build_reverse_graph() -> Dict[str, List[str]]:

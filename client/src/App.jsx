@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+// at top of App.jsx
+import { getCatalog, decide as decideApi, why as whyApi } from "./api";
 
-const API = axios.create({ baseURL: "http://localhost:8000" });
+
+import { useEffect, useState } from "react";
 
 export default function App() {
   const [catalog, setCatalog] = useState({ sections: [] });
@@ -9,9 +10,9 @@ export default function App() {
   const [res, setRes] = useState(null);
   const [info, setInfo] = useState(null);
 
-  useEffect(() => {
-    API.get("/catalog").then((r) => setCatalog(r.data));
-  }, []);
+useEffect(() => {
+  getCatalog().then((r) => setCatalog(r));
+}, []);
 
   const toggle = (id) => {
     setRes(null);
@@ -22,13 +23,13 @@ export default function App() {
   };
 
   const decide = async () => {
-    const r = await API.post("/decide", { backs });
+    const r = await decideApi(backs);
     setRes(r.data);
     setInfo(null);
   };
 
   const why = async (course) => {
-    const r = await API.post("/why", { course, backs });
+    const r = await whyApi(course, backs);
     setInfo(r.data);
   };
 

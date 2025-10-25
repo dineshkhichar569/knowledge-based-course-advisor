@@ -24,13 +24,13 @@ useEffect(() => {
 
   const decide = async () => {
     const r = await decideApi(backs);
-    setRes(r.data);
+    setRes(r);
     setInfo(null);
   };
 
   const why = async (course) => {
     const r = await whyApi(course, backs);
-    setInfo(r.data);
+    setInfo(r);
   };
 
   return (

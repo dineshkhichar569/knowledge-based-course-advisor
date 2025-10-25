@@ -70,3 +70,8 @@ def why(req: ExplainReq):
     blocked, explain = closure_blocked(backs)
     reason = explain.get(req.course, [])
     return {"course": req.course, "blocked": req.course in blocked, "reasons": reason}
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}

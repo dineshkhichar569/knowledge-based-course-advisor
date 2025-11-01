@@ -1,4 +1,3 @@
-// at top of App.jsx
 import { getCatalog, decide as decideApi, why as whyApi } from "./api";
 
 
@@ -50,8 +49,7 @@ useEffect(() => {
             order: <span className="font-semibold">A (first)</span> → B → C → D.
           </p>
         </header>
-
-        {/* Grid: Left (inputs), Right (rule card) */}
+        
         <section className="grid gap-6 md:grid-cols-2">
           {/* Inputs */}
           <div className="rounded-2xl bg-slate-900/60 ring-1 ring-slate-800/80 shadow-xl shadow-black/30">
@@ -116,7 +114,6 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Rules Card */}
           <div className="rounded-2xl bg-slate-900/60 ring-1 ring-slate-800/80 p-6 shadow-xl shadow-black/30">
             <h3 className="text-lg font-semibold">Rule</h3>
             <p className="mt-2 text-slate-300">
@@ -158,7 +155,6 @@ useEffect(() => {
           </div>
         </section>
 
-        {/* Results */}
         {res && (
           <section className="mt-8 grid gap-6 md:grid-cols-2">
             {/* Allowed */}
@@ -192,7 +188,6 @@ useEffect(() => {
               )}
             </div>
 
-            {/* Blocked */}
             <div className="rounded-2xl bg-slate-900/60 ring-1 ring-slate-800/80 p-6 shadow-xl shadow-black/30">
               <div className="mb-4 flex items-center justify-between">
                 <h3 className="text-lg font-semibold">⛔ Blocked</h3>
@@ -225,7 +220,6 @@ useEffect(() => {
           </section>
         )}
 
-        {/* Explanation Drawer */}
         {info && (
           <section className="mt-6">
             <div className="rounded-2xl bg-slate-900/60 ring-1 ring-slate-800/80 p-6 shadow-xl shadow-black/30">
@@ -257,12 +251,9 @@ useEffect(() => {
           </section>
         )}
 
-        {/* Footer */}
 <footer className="mt-16 border-t border-slate-800/70 bg-gradient-to-b from-slate-900/80 via-slate-950 to-black text-slate-400">
   <div className="mx-auto max-w-7xl px-6 py-10">
-    {/* Upper section */}
     <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-      {/* Column 1 - Logo / Description */}
       <div>
         <h2 className="text-xl font-bold text-slate-100">Course Advisor</h2>
         <p className="mt-3 text-sm leading-relaxed text-slate-400">
@@ -272,7 +263,6 @@ useEffect(() => {
         </p>
       </div>
 
-      {/* Column 2 - Quick Links */}
       <div className="flex flex-col">
         <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-300">
           Technologies
@@ -297,7 +287,6 @@ useEffect(() => {
         </ul>
       </div>
 
-      {/* Column 3 - Team */}
       <div>
         <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-300">
           Built by
@@ -319,10 +308,8 @@ useEffect(() => {
       </div>
     </div>
 
-    {/* Divider */}
     <div className="my-8 h-px w-full bg-slate-800/70" />
 
-    {/* Lower section */}
     <div className="flex flex-col items-center justify-between gap-4 text-sm sm:flex-row">
       <p className="text-slate-500">
         © {new Date().getFullYear()} Course Advisor. All rights reserved.

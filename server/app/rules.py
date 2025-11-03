@@ -1,5 +1,3 @@
-# === Sections (tiers) ===
-# A = studied first (foundations) → B → C → D
 SECTION_BY_TIER = {
     "A": [
         "Math-I",
@@ -25,7 +23,6 @@ SECTION_BY_TIER = {
     ]
 }
 
-# Friendly names
 DISPLAY_NAME = {
     "Math-I": "Mathematics I",
     "Programming Fundamentals": "Programming Fundamentals",
@@ -46,37 +43,34 @@ DISPLAY_NAME = {
     "Machine Learning": "Machine Learning",
 }
 
-# === Prerequisites (direct edges) ===
-# Edge A -> B means: B REQUIRES A (so backlog in A blocks B)
 PREREQ_GRAPH = {
-    # A-tier have no prereqs (foundation)
+    # A
     "Math-I": [],
     "Programming Fundamentals": [],
     "Discrete Mathematics": [],
     "Digital Logic": [],
 
-    # B-tier (built on A)
+    # B (built on A)
     "DSA": ["Programming Fundamentals", "Discrete Mathematics"],
     "OOP/Java": ["Programming Fundamentals"],
     "DBMS": ["Programming Fundamentals"],
     "Computer Organization": ["Digital Logic"],
 
-    # C-tier (built on B)
+    # C (built on B)
     "Operating Systems": ["DSA", "Computer Organization"],
     "Computer Networks": ["DSA"],
     "DAA": ["DSA"],
     "Advanced Java": ["OOP/Java"],
 
-    # D-tier (built on C/B)
+    # D (built on C/B)
     "AI": ["DSA"],
-    "Machine Learning": ["AI", "DAA"],  # needs AI + DAA
+    "Machine Learning": ["AI", "DAA"],
 }
 
 def all_courses():
     courses = set()
     for _, arr in SECTION_BY_TIER.items():
         courses.update(arr)
-    # include any that are only in prereqs (safety)
     for k, deps in PREREQ_GRAPH.items():
         courses.add(k)
         for d in deps:
@@ -87,4 +81,4 @@ def section_of(course_id: str) -> str:
     for sec, arr in SECTION_BY_TIER.items():
         if course_id in arr:
             return sec
-    return "Z"  # unknown (last)
+    return "Z"

@@ -44,7 +44,7 @@ DISPLAY_NAME = {
 }
 
 PREREQ_GRAPH = {
-    # A
+    # A (initially)
     "Math-I": [],
     "Programming Fundamentals": [],
     "Discrete Mathematics": [],

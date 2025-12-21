@@ -160,7 +160,7 @@ useEffect(() => {
             {/* Allowed */}
             <div className="rounded-2xl bg-slate-900/60 ring-1 ring-slate-800/80 p-6 shadow-xl shadow-black/30">
               <div className="mb-4 flex items-center justify-between">
-                <h3 className="text-lg font-semibold">✅ You can take</h3>
+                <h3 className="text-lg font-semibold">✅ Courses you can take</h3>
                 <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/30">
                   {res.allowed.length}
                 </span>

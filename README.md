@@ -6,7 +6,7 @@ It functions like an intelligent academic advisor — reasoning through course d
 ---
 
 ## 🔗 Live Demo  
-🔗 Visit the live frontend here: [https://knowledge-based-course-advisor.vercel.app/](https://knowledge-based-course-advisor.vercel.app)
+🔗 Visit the live frontend here : [https://knowledge-based-course-advisor.vercel.app/](https://knowledge-based-course-advisor.vercel.app)
 
 ---
 
